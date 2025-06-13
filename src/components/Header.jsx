@@ -1,0 +1,99 @@
+import { useLocation, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import Logo from '../img/logo.png';
+import './Header.scss';
+
+export default function Header() {
+    const location = useLocation();
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden'; // запрет прокрутки при открытом меню
+        } else {
+            document.body.style.overflow = '';
+        }
+    }, [isMobileMenuOpen]);
+
+    const navItems = [
+        { path: '/42-22', label: 'Коммунальные объекты' },
+        { path: '/41-10', label: 'Проектирование' },
+        { path: '/41-20', label: 'Жилые и нежилые здания' },
+        { path: '/42-11', label: 'Автодороги' },
+        { path: '/42-12', label: 'Метро и железные дороги' },
+        { path: '/42-21', label: 'Инженерные коммуникации' },
+        { path: '/42-99', label: 'Прочие сооружения' },
+    ];
+
+    return (
+        <header className="header">
+            <div className="logo-block">
+                <img src={Logo} alt="Логотип" className="logo-placeholder" />
+                <span className="company-name">Аиконт</span>
+            </div>
+
+            {/* Desktop меню */}
+            <nav className="nav-menu">
+                <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
+                    О компании
+                </Link>
+
+                <div className="nav-dropdown" onMouseLeave={() => setDropdownOpen(false)}>
+                    <button
+                        className="nav-link dropdown-button"
+                        onClick={() => setDropdownOpen(!dropdownOpen)}
+                    >
+                        Услуги ▾
+                    </button>
+                    {dropdownOpen && (
+                        <ul className="dropdown-menu">
+                            {navItems.map((item) => (
+                                <li key={item.path}>
+                                    <Link
+                                        to={item.path}
+                                        className={`dropdown-item ${location.pathname === item.path ? 'active' : ''}`}
+                                        onClick={() => setDropdownOpen(false)}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+
+                <div className="contacts">+7 (000) 000-00-00</div>
+                <div className="cta-wrapper">
+
+                    <Link to="/application" className={`nav-link ${location.pathname === '/application' ? 'active' : ''}`}>
+                        Оставить заявку
+                    </Link>
+
+                </div>
+            </nav>
+
+            {/* Бургер для телефона */}
+            <button className="burger-button" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                ☰
+            </button>
+
+            {isMobileMenuOpen && (
+                <div className="mobile-menu">
+                    <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>О компании</Link>
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.path}
+                            to={item.path}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                    <div className="mobile-contacts">+7 (000) 000-00-00</div>
+                    <button className="cta-button">Оставить заявку</button>
+                </div>
+            )}
+        </header>
+    );
+}
