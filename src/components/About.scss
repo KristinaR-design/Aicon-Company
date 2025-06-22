@@ -15,7 +15,7 @@
   }
 
   &__title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #fff8f8;
     text-align: center;
@@ -36,7 +36,7 @@
 
   .about__cta {
     
-    font-weight: 600;
+    font-weight: 600px;
     color: #1976d2;
     font-size: 1.125rem;
     line-height: 1.75;
@@ -168,12 +168,41 @@
   border: 2px solid  #1976d2;
 }
 
+.main_space{
+  
+    font-weight: 600px;
+    color: #fff8f8;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 0.5rem;
+    align-self: center;
+}
+
+
+
+.about_title{
+  
+ font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 auto 1rem auto;
+  width: fit-content; 
+  
+  color: #fff8f8;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #1976d2;
+  padding-bottom: 0.5rem;
+  align-self: center;
+}
+
 
 
 // пОЧЕМУ ВЫБИРАЮТ НАС 
 
 
 .why-us {
+  height: inherit;
   margin-top: 35px;
   padding: 40px 20px;
   background-color: #153d6d7a;
@@ -329,6 +358,7 @@
 
   .about__title {
     font-size: 1.8rem;
+    
   }
 
   .about_text,
