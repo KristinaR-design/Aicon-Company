@@ -15,14 +15,16 @@
   }
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     color: #fff8f8;
     text-align: center;
     margin-bottom: 1rem;
     border-bottom: 2px solid #1976d2;
     padding-bottom: 0.5rem;
-    align-self: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__text {
@@ -35,45 +37,30 @@
   }
 
   .about__cta {
-    
-    font-weight: 600px;
+    font-weight: 600;
     color: #1976d2;
     font-size: 1.125rem;
     line-height: 1.75;
     text-align: center;
     max-width: 600px;
     margin: 2rem auto 0;
-    border-color: #00e4f5;
-    border: 2px solid  #00e4f5;
+    border: 2px solid #00e4f5;
   }
 
-  // 🔁 Блок с изображением и текстом в линию
   .block-group {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
     align-items: center;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
   }
 
- 
-
-  .block-group.reverse {
-    flex-direction: row-reverse;
-  }
-
-  .second-foto-placeholder{
-    border-radius: 30px;
-    border: 2px solid #1976d2;
-    width: 350px;
-    height: 350px;
-    height: auto;
-    overflow: hidden;
-     
-  }
-
-  .back-placeholder,
   .little-back-placeholder,
+  .back-placeholder,
   .second-foto-placeholder {
     border-radius: 30px;
     border: 2px solid #1976d2;
@@ -83,42 +70,24 @@
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
   }
 
-.little-back-placeholder {
-  border: 2px solid #fefeff;
-  border-radius: 50px;
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .little-back-placeholder {
+    border: 2px solid #fefeff;
+    border-radius: 50px;
+    width: 300px;
+    height: 300px;
   }
-}
 
-
-.second-foto-placeholder {
-  border: 2px solid #1976d2;
-  border-radius: 50px;
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .second-foto-placeholder {
+    border-radius: 50px;
+    width: 300px;
+    height: 300px;
   }
-}
-
 
   .first__text,
   .second__text,
@@ -131,300 +100,285 @@
     text-align: left;
   }
 
-  .second__text {
-    // border: solid #ffffff;
-    padding-bottom: 1rem;
-  }
-
-  .pre-final__text {
-    // border: 1px solid #ffffff;
-    padding: 1rem;
-  }
-
-
-  .about_text{
-    gap: 20px;
-    max-width: 600px;
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: #ffffff;
-    text-align: center;
-    
-  }
-
   .about_flex {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap; /* для адаптивности */
-}
-
-.about_image img {
-  width: 320px;
-  border-radius: 20px;
-   box-shadow:0 2px 8px rgb(36, 109, 198) ;
-  border-color: #1976d2;
-  border: 2px solid  #1976d2;
-}
-
-.main_space{
-  
-    font-weight: 600px;
-    color: #fff8f8;
-    text-align: center;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #1976d2;
-    padding-bottom: 0.5rem;
-    align-self: center;
-}
-
-
-
-.about_title{
-  
- font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0 auto 1rem auto;
-  width: fit-content; 
-  
-  color: #fff8f8;
-  text-align: center;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #1976d2;
-  padding-bottom: 0.5rem;
-  align-self: center;
-}
-
-
-
-// пОЧЕМУ ВЫБИРАЮТ НАС 
-
-
-.why-us {
-  height: inherit;
-  margin-top: 35px;
-  padding: 40px 20px;
-  background-color: #153d6d7a;
-  color: #fff;
-  border-radius: 40px;
-  text-align: center;
-  box-shadow:0 2px 8px rgb(36, 109, 198) ;
-}
-
-.why-title {
-  font-size: 28px;
-  margin-bottom: 40px;
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.why-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 24px;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-  box-shadow:0 2px 8px rgb(36, 109, 198) ;
-}
-
-.why-item:hover {
-  transform: translateY(-5px);
-}
-
-.why-item img {
-  width: 100%;
-  margin-bottom: 16px;
-  height: 130px;
-}
-
-
-// Контактная информация 
-
-.contact-section {
-  margin-top: 10px;
- background-color: #00336600;
-  color: #fff;
-  margin-bottom: 30px;
-  padding: 8px 60px;
-  border-radius: 30px;
-  text-align: center;
-  
-}
-
-.contact-content {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.contact-title {
-  font-size: 32px;
-  margin-bottom: 24px;
-}
-
-.contact-text {
-  font-size: 18px;
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-
-.contact-call {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 24px 0;
-}
-
-.contact-button {
-   background-color: transparent;
-  color: #00f0ff;
-  border: 2px solid #246dc6;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 0 8px #246dc6, 0 0 16px #246dc6 inset;
-}
-
-.contact-button:hover {
-  // background-color: #33fff5;
-   background-color: #246dc6;
-  color: #fefeff;
-  box-shadow: 0 0 12px #246dc6, 0 0 20px #246dc6, 0 0 28px #246dc6;
-}
-
-
-  /* --- Большие экраны (от 1200px) --- */
-@media (min-width: 1200px) {
-  .about__title {
-    font-size: 2.5rem;
-  }
-
-  .contact-title {
-    font-size: 36px;
-  }
-
-  .why-title {
-    font-size: 32px;
-  }
-
-  .contact-button {
-    font-size: 20px;
-    padding: 16px 32px;
-  }
-}
-
-/* --- Ноутбуки и планшеты в альбомной ориентации (768px–1199px) --- */
-@media (max-width: 1199px) and (min-width: 768px) {
-  .block-group {
-    flex-direction: row;
-    gap: 2rem;
-  }
-
-  .first__text,
-  .second__text,
-  .pre-final__text {
-    font-size: 1.05rem;
-    text-align: center;
-    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
   }
 
   .about_image img {
-    width: 280px;
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgb(36, 109, 198);
+    border: 2px solid #1976d2;
   }
 
-  .second-foto-placeholder,
-  .back-placeholder {
-    width: 260px;
-    height: auto;
-  }
-
-  .little-back-placeholder {
-    width: 160px;
-    height: 160px;
-  }
-}
-
-/* --- Планшеты и мобильные устройства (до 767px) --- */
-@media (max-width: 767px) {
-  .about {
-    padding: 2rem 1rem;
-  }
-
-  .about__title {
-    font-size: 1.8rem;
-    
-  }
-
-  .about_text,
-  .first__text,
-  .second__text,
-  .pre-final__text,
-  .contact-text,
-  .contact-call {
-    font-size: 1rem;
+  .about_title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 auto 1rem auto;
+    width: fit-content;
+    color: #fff8f8;
     text-align: center;
-    line-height: 1.6;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 0.5rem;
   }
 
-  .block-group {
-    flex-direction: column;
-    gap: 1.5rem;
+
+  .main_space{
+     font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 auto 1rem auto;
+    width: fit-content;
+    color: #fff8f8;
+    text-align: center;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 0.5rem;
   }
 
-  .about_image img,
-  .second-foto-placeholder,
-  .back-placeholder {
-    width: 90%;
-    max-width: 300px;
+
+  // Почему мы 
+  .why-us {
+    margin-top: 35px;
+    padding: 40px 20px;
+    background-color: #153d6d7a;
+    color: #fff;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgb(36, 109, 198);
   }
 
-  .little-back-placeholder {
-    width: 120px;
-    height: 120px;
-  }
-
-  .contact-button {
-    width: 100%;
-    font-size: 16px;
-    padding: 12px 20px;
+  .why-title {
+    font-size: 28px;
+    margin-bottom: 40px;
   }
 
   .why-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
   }
 
-  .why-title {
-    font-size: 24px;
+  .why-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgb(36, 109, 198);
+  }
+
+  .why-item:hover {
+    transform: translateY(-5px);
   }
 
   .why-item img {
-    height: 120px;
+    width: 100%;
+    margin-bottom: 16px;
+    height: 130px;
   }
-}
 
-/* --- Очень узкие экраны (до 420px) --- */
-@media (max-width: 420px) {
-  .about__title {
-    font-size: 1.5rem;
+  // Свяжитесь с нами 
+  .contact-section {
+    margin-top: 10px;
+    background-color: transparent;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 8px 60px;
+    border-radius: 30px;
+    text-align: center;
+  }
+
+  .contact-content {
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   .contact-title {
-    font-size: 24px;
+    font-size: 32px;
+    margin-bottom: 24px;
   }
 
-  .about_image img {
-    width: 100%;
+  .contact-text {
+    font-size: 18px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .contact-call {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 24px 0;
   }
 
   .contact-button {
-    font-size: 15px;
-    padding: 10px 18px;
+    background-color: transparent;
+    color: #00f0ff;
+    border: 2px solid #246dc6;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px #246dc6, 0 0 16px #246dc6 inset;
+  }
+
+  .contact-button:hover {
+    background-color: #246dc6;
+    color: #fefeff;
+    box-shadow: 0 0 12px #246dc6, 0 0 20px #246dc6, 0 0 28px #246dc6;
+  }
+
+  // Responsive: ноутбуки и планшеты
+  @media (max-width: 1199px) {
+    .about__title {
+      font-size: 1.8rem;
+    }
+
+    .about_image img,
+    .second-foto-placeholder,
+    .back-placeholder {
+      width: 260px;
+    }
+
+    .little-back-placeholder {
+      width: 160px;
+      height: 160px;
+    }
+
+    .first__text,
+    .second__text,
+    .pre-final__text {
+      font-size: 1.05rem;
+      text-align: center;
+      max-width: 100%;
+    }
+  }
+
+  // Мобильные
+  @media (max-width: 767px) {
+    .about {
+      padding: 2rem 1rem;
+    }
+
+    .about__title {
+      font-size: 1.5rem;
+    }
+
+    .about_image img,
+    .second-foto-placeholder,
+    .back-placeholder {
+      width: 90%;
+      max-width: 300px;
+    }
+
+    .little-back-placeholder {
+      width: 120px;
+      height: 120px;
+    }
+
+    .contact-button {
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px;
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-item img {
+      height: 120px;
+    }
+  }
+
+  // Очень узкие экраны
+  @media (max-width: 420px) {
+    .contact-title {
+      font-size: 24px;
+    }
+
+    .contact-button {
+      font-size: 15px;
+      padding: 10px 18px;
+    }
   }
 }
+
+
+@media (max-width: 400px) {
+  .about {
+    padding: 1rem;
+
+    &__title,
+    .about_title,
+    .main_space {
+      font-size: 1.3rem;
+      border-bottom: 1.5px solid #1976d2;
+      padding-bottom: 0.4rem;
+    }
+
+    &__text,
+    .about_text,
+    .first__text,
+    .second__text,
+    .pre-final__text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      padding: 0 0.5rem;
+      text-align: justify;
+    }
+
+    .about_image img,
+    .second-foto-placeholder,
+    .back-placeholder,
+    .little-back-placeholder {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+    }
+
+    .why-title {
+      font-size: 1.2rem;
+    }
+
+    .why-item {
+      padding: 16px;
+    }
+
+    .why-item img {
+      height: 100px;
+      margin-bottom: 12px;
+    }
+
+    .contact-section {
+      padding: 10px 16px;
+    }
+
+    .contact-title {
+      font-size: 20px;
+    }
+
+    .contact-text {
+      font-size: 0.95rem;
+    }
+
+    .contact-call {
+      font-size: 1rem;
+    }
+
+    .contact-button {
+      font-size: 14px;
+      padding: 10px 16px;
+      box-shadow: 0 0 6px #246dc6, 0 0 10px #246dc6 inset;
+    }
+
+    .block-group {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
 }
