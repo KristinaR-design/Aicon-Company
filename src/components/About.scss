@@ -309,7 +309,7 @@
 }
 
 
-@media (max-width: 400px) {
+@media (min-width: 400px) and (max-width: 767px) {
   .about {
     padding: 1rem;
 
