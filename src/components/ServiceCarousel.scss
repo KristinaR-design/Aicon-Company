@@ -1,8 +1,10 @@
-/* Базовые стили */
 .carousel-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .slide {
@@ -15,26 +17,12 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px #246dc6;
   padding: 24px;
-  height: 420px;
   text-align: center;
   border: 1px solid #246dc6;
-}
-
-.slide-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #ffffff;
-}
-
-.slide-description {
-  color: #ffffff;
-  font-size: 14px;
-  line-height: 1.5;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .slide-image {
@@ -42,57 +30,52 @@
   height: 140px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgb(36, 109, 198);
+  box-shadow: 0 2px 8px #246dc6;
   margin-bottom: 12px;
 }
 
-/* Адаптивность: ноутбуки (до 1024px) */
+.slide-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  line-height: 1.4;
+  min-height: 48px;
+}
+
+.slide-description {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---------- Адаптив ---------- */
+
+/* Ноутбуки */
 @media (max-width: 1024px) {
   .carousel-container {
     max-width: 800px;
     padding: 18px;
   }
 
-  .slide-card {
-    height: 380px;
+  .slide-image {
+    height: 130px;
   }
 }
 
-/* Планшеты (до 768px) */
+/* Планшеты */
 @media (max-width: 768px) {
   .carousel-container {
-    max-width: 540px;
-    padding: 16px;
-  }
-
-  .slide-card {
-    height: 360px;
-  }
-
-  .slide-title {
-    font-size: 18px;
-  }
-
-  .slide-description {
-    font-size: 15px;
-  }
-}
-
-/* Мобильные (до 480px) */
-@media (max-width: 480px) {
-  .carousel-container {
-    max-width: 320px;
-    padding: 14px;
-  }
-
-  .slide-card {
-    height: auto;
+    max-width: 90%;
     padding: 16px;
   }
 
   .slide-title {
     font-size: 16px;
-    margin-bottom: 10px;
   }
 
   .slide-description {
@@ -101,16 +84,15 @@
   }
 
   .slide-image {
-    height: 130px;
-    margin-bottom: 10px;
+    height: 120px;
   }
 }
 
-/* Специально для узких экранов (до 400px) */
-@media (max-width: 400px) {
+/* Мобильные */
+@media (max-width: 480px) {
   .carousel-container {
     max-width: 100%;
-    padding: 12px;
+    padding: 14px;
   }
 
   .slide {
@@ -118,14 +100,13 @@
   }
 
   .slide-card {
-    padding: 14px;
+    padding: 16px;
     border-radius: 10px;
     box-shadow: 0 1px 6px #246dc6;
   }
 
   .slide-title {
     font-size: 15px;
-    line-height: 1.4;
   }
 
   .slide-description {
@@ -134,6 +115,6 @@
   }
 
   .slide-image {
-    height: 120px;
+    height: 110px;
   }
 }
